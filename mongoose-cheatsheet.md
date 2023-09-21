@@ -142,7 +142,8 @@ const savedTask = await Task.create(newTask);
     await Task.insertMany(newTasks)
   ```
 - Notice: all the three insertion methods validate with the schemas before inserting.
-- Methods that don't apply validation are:
-- Update, updateOne, updateMany, findOneAndUpdate,findByIdAndUpdate.. but to run validators for them, use the option :{ runValidators: true }.
+- Methods that don't apply validation are: \
+ Update, updateOne, updateMany, findOneAndUpdate,findByIdAndUpdate.. \
+ but to run validators for them, use the option : { runValidators: true }.
   
   
