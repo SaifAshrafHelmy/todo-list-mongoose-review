@@ -98,8 +98,23 @@ const taskSchema = new Schema({
    
 
 
-## insert new documents
-you can use 3 methods to insert new documents:
+## Insert new documents
+
+
+#### PLEASE NOTE: Mongoose does NOT sanitize input, so you have to use an external library to sanitize input from req.body and protect against xss attacks and No-SQL injection.
+- you can use the following library to sanitize input (express-mongo-sanitize)
+```js
+const mongoSanitize = require('express-mongo-sanitize')
+app.use(mongoSanitize())
+```
+
+You can also pass this option to replace prohibited characters with ' - '
+``{
+    replaceWith: '_',
+}``
+
+
+#### You can use these 3 methods to insert new documents:
 - with new Model and .save():
   ```js
      / const newTask = new Task({content:"do homework", owner:currentUser._id})
