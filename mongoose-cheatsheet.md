@@ -105,6 +105,9 @@ const taskSchema = new Schema({
 - you can use the following library to sanitize input (express-mongo-sanitize)
 ```js
 const mongoSanitize = require('express-mongo-sanitize')
+.
+.
+// after defining the app instance:
 app.use(mongoSanitize())
 ```
 
@@ -117,7 +120,7 @@ You can also pass this option to replace prohibited characters with ' - '
 #### You can use these 3 methods to insert new documents:
 - with new Model and .save():
   ```js
-     / const newTask = new Task({content:"do homework", owner:currentUser._id})
+      const newTask = new Task({content:"do homework", owner:currentUser._id})
       const savedTask = await newTask.save()
 
   ```
